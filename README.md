@@ -10,9 +10,43 @@ Suppose we are developing a new labeling tool to annotate masks in a video.Label
 
 - [OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks](https://arxiv.org/pdf/1312.6229.pdf)
 
+- [Mask R-CNN](https://arxiv.org/pdf/1703.06870.pdf)
+
 
 
 ### open source repositories on this grand
 
 - [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
+
+
+### mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28
+
+- In this method, only the pre-prepared model is used and the following video is created by it.
+
+- main video
+
+https://user-images.githubusercontent.com/78655282/125610848-b75e9593-9cb7-4408-aad1-27344bea044c.mp4
+
+- output video
+
+https://user-images.githubusercontent.com/78655282/125618593-79d03991-3488-4d61-81e7-2ef23aacb7db.mp4
+
+
+### Faster RCNN + InceptionResNet V2 + Deep MAC
+
+In the second method, a combination of two models is used. faster RCNN - InceptionResNet V2 + Deep MAC. In this two-part model, the box around the objects is first obtained by faster RCNN - InceptionResNet V2, and after this step, the object mask is applied by Deep MAC. This method is highly dependent on the first step, which is to find the boxes, and if the boxes are determined with high accuracy, deep mac can do its job well. To improve the result, you can use other models such as YOLOv3-spp and YOLOv3-608, which are much better at finding boxes and finally their work speed is high
+
+- main video
+
+https://user-images.githubusercontent.com/78655282/125610848-b75e9593-9cb7-4408-aad1-27344bea044c.mp4
+
+- output video
+
+https://user-images.githubusercontent.com/78655282/125618476-a597ed29-b7bd-446c-9440-8600bbd9372d.mp4
+
+
+
+
+
+
 
