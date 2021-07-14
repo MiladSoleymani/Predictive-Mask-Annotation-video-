@@ -21,8 +21,12 @@ Suppose we are developing a new labeling tool to annotate masks in a video.Label
 
 ### mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28
 
-- In this method, only the pre-prepared model is used and the following video is created by it.
-
+- In the second method, a combination of two models is used. faster RCNN - InceptionResNet V2
+  + Deep MAC. In this two-part model, the box around the objects is first obtained by faster RCNN
+  - InceptionResNet V2, and after this step, the object mask is applied by Deep MAC. This
+  method is highly dependent on the first step, which is to find the boxes, and if the boxes are
+  determined with high accuracy, deep mac can do its job well. 
+  
 - main video
 
 https://user-images.githubusercontent.com/78655282/125610848-b75e9593-9cb7-4408-aad1-27344bea044c.mp4
@@ -34,7 +38,8 @@ https://user-images.githubusercontent.com/78655282/125618593-79d03991-3488-4d61-
 
 ### Faster RCNN + InceptionResNet V2 + Deep MAC
 
-In the second method, a combination of two models is used. faster RCNN - InceptionResNet V2 + Deep MAC. In this two-part model, the box around the objects is first obtained by faster RCNN - InceptionResNet V2, and after this step, the object mask is applied by Deep MAC. This method is highly dependent on the first step, which is to find the boxes, and if the boxes are determined with high accuracy, deep mac can do its job well. To improve the result, you can use other models such as YOLOv3-spp and YOLOv3-608, which are much better at finding boxes and finally their work speed is high
+In the second method, a combination of two models is used. faster RCNN - InceptionResNet V2 + Deep MAC. In this two-part model, the box around the objects is first obtained by faster RCNN - InceptionResNet V2, and after this step, the object mask is applied by Deep MAC. This method is highly dependent on the first step, which is to find the boxes, and if the boxes are determined with high accuracy, deep mac can do its job well. To improve the result, you can use other models such as YOLOv3-spp and YOLOv3-608, which are much better at finding boxes and finally their work speed is high.In this method, processing every 4 seconds for each frame,
+and for 74 frames of time equivalent to 296 seconds
 
 - main video
 
